@@ -1,0 +1,30 @@
+.container {
+	border-radius: 25px;
+	-webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	background-color: #222831;
+	color: #ffffff;
+	/* height: 400px; */
+	/* padding: 0 30px; */
+	display: flex;
+	align-items: center;
+}
+.favourite-icon-link {
+	position: absolute;
+	top: 35px;
+	right: 180px;
+	color: red;
+	font-size: 24px;
+	z-index: 10;
+}
+
+.lang-btn {
+	z-index: 10;
+}
+
+@media(max-width: 900px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+	}
+}

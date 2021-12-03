@@ -1,0 +1,58 @@
+.favourite-list {
+  width: 100%;
+  min-width: 300px;
+}
+
+.favourite-item {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+border: none;
+border-radius: 10px;
+font-size: 16px;
+font-family: 'Montserrat', sans-serif;
+background-image: var(--gradient);
+/* color: #ffffff; */
+color: black;
+font-weight: 700;
+-webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+-webkit-transition: -webkit-transform 200ms ease;
+transition: -webkit-transform 200ms ease;
+-o-transition: transform 200ms ease;
+transition: transform 200ms ease;
+transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.favourite-remove {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.favourite-empty {
+  color: #ffff;
+  font-size: 28px;
+  text-align: center;
+}
+
+.favourite-remove:hover {
+	transform: scale(1.1);
+}
+
+.back-page {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: .15s;
+}
+
+.back-page:hover {
+  color: rgb(143, 137, 137);
+}

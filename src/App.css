@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 320px;
 }
 
-.App-link {
-  color: #61dafb;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+:root {
+	--gradient: linear-gradient( 135deg, #72EDF2 10%, #9595f1 100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	line-height: 1.25em;
+	/* padding: 0;
+  margin: 0; */
 }
+
+.clear {
+	clear: both;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	/* height: 100vh; */
+	font-family: 'Montserrat', sans-serif;
+	background-color: #343d4b;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+li {
+  list-style-type: none;
+}
+
+button {
+	border: none;
+	width: 60px;
+	padding: 8px 15px;
+	background: #ffff;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+button:first-child {
+	border-radius: 5px 0 0 5px;
+}
+
+button:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+button:hover {
+	background: rgb(176, 151, 235);
+}
+
+.lang-btn {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+
+@media(max-width: 900px) {
+	.wrapper {
+		margin-top: 100px;
+		margin-bottom: 30px;
+	}
+	
+}
+

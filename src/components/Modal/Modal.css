@@ -1,0 +1,50 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 400px;
+  height: 300px;
+  /* background: #fff; */
+  background: linear-gradient( 135deg, #72EDF2 10%, #9595f1 100%);
+  position: relative;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.modal-text {
+  color: #ffff;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.buttons {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+  font-size: 36px;
+  
+}

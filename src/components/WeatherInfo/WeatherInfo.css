@@ -1,0 +1,135 @@
+.info-side {
+	position: relative;
+	height: 100%;
+	padding: 20px;
+	width: 100%;
+}
+
+.today-info {
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+.today-info > div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.today-info>div:not(:last-child) {
+	margin: 0 0 10px 0;
+}
+
+.today-info>div .title {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+
+.week-list {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	list-style: none;
+	-webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+.week-list>li {
+	padding: 15px;
+	cursor: pointer;
+	-webkit-transition: 200ms ease;
+	-o-transition: 200ms ease;
+	transition: 200ms ease;
+	border-radius: 10px;
+}
+
+.week-list>li:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
+	background: #fff;
+	color: #222831;
+	-webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+}
+
+.week-list>li.active {
+	background: #fff;
+	color: #222831;
+	border-radius: 10px;
+}
+
+.week-list>li .day-name {
+	display: block;
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+
+.week-list>li .day-icon {
+	display: block;
+	height: 30px;
+	width: auto;
+	margin: 0 auto;
+}
+
+.week-list>li .day-temp {
+	display: block;
+	text-align: center;
+	margin: 10px 0 0 0;
+	font-weight: 700;
+}
+
+.location-form {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.location-input {
+	outline: none;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	border: none;
+	border-radius: 25px;
+	padding: 10px;
+	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+	background-image: var(--gradient);
+	color: black;
+	font-weight: 700;
+	-webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	-webkit-transition: -webkit-transform 200ms ease;
+	transition: -webkit-transform 200ms ease;
+	-o-transition: transform 200ms ease;
+	transition: transform 200ms ease;
+	transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.location-input::placeholder {
+	color:black;
+}
+
+.location-search {
+	margin-left: 10px;
+	font-size: 26px;
+	cursor: pointer;
+}
+
+.day-img {
+	width: 50px;
+	margin: 0 auto;
+}
+
+.day-img img {
+	width: 100%;
+}
+
+@media(max-width: 620px) {
+	.week-list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
