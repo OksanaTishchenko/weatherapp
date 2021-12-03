@@ -11,7 +11,7 @@ const WeatherInfo = ({ inputHandler,
   getDayOfTheWeek,
   changeActive,
   city,
-  onChangeDate
+  loading
 }) => {
   const { t } = useTranslation()
   return (

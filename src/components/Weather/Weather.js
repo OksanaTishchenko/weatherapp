@@ -15,6 +15,8 @@ const Weather = ({ activeDay, city, weekDay, convertToFahrenheit, defaultTemp, a
         <span className="date-day">{activeDay.applicable_date.split('-').reverse().join('.')}</span>
         <span className="location">{city}</span>
         <div className="location-favourite" onClick={addToFavourite}>
+
+          {/* {checkCity && <span><Trans>Added</Trans></span>} */}
           <span><Trans>Add to</Trans></span>
           <FaRegHeart className="favourite-icon" />
         </div>

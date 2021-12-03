@@ -1,22 +1,37 @@
-import { REMOVE_CITY, ADD_CITY } from "../../constants"
+import { REMOVE_CITY, ADD_CITY, ACTIVE_LINK, ADD_TO_CASH, CLEAR_LINK } from "../../constants"
 
 const initialState = {
-  favourites: []
+  favourites: [],
+  activeLink: null,
+  cashCities: []
 }
 
 export function favouritesReducer(state = initialState, action) {
   switch (action.type) {
-    case REMOVE_CITY: {
-      // let idx = state.favourites.findIndex(item => item.id === action.payload)
-      // //console.log(idx);
-      // state.favourites.splice(idx, 1);
+    case REMOVE_CITY:
       return {
+        ...state,
         favourites: state.favourites.filter(item => item.id !== action.payload)
       }
-    }
     case ADD_CITY:
       return {
+        ...state,
         favourites: [...state.favourites, { id: action.payload.id, title: action.payload.city }]
+      }
+    case ACTIVE_LINK:
+      return {
+        ...state,
+        activeLink: action.payload
+      }
+    case ADD_TO_CASH:
+      return {
+        ...state,
+        cashCities: [...state.cashCities, { id: action.payload.id, city: action.payload.city }]
+      }
+    case CLEAR_LINK:
+      return {
+        ...state,
+        activeLink: null
       }
 
     default:

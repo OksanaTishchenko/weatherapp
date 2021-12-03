@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Trans } from "react-i18next";
 
-import { removeCity } from "../../store/actions";
+import { removeCity, activeLink } from "../../store/actions";
 
 import Modal from "../../components/Modal/Modal";
 
@@ -17,6 +17,7 @@ const Favourites = () => {
   const [currentCity, setCurrentCity] = useState(null);
   const favourites = useSelector(state => state.favourites.favourites);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const modalOpenHandler = (item) => {
     setOpenModal(true);
@@ -30,6 +31,11 @@ const Favourites = () => {
     setOpenModal(false);
   }
 
+  const drawForecast = city => {
+    dispatch(activeLink(city));
+    navigate("/");
+  }
+
   return (
     <div className="favourite">
       {openModal &&
@@ -41,7 +47,7 @@ const Favourites = () => {
           ? <ul className="favourite-list">
             {favourites.map(item => (
               <li key={item.id} className="favourite-item">
-                <div className="favourite-city">{item.title}</div>
+                <div className="favourite-city" onClick={() => drawForecast(item.title)}>{item.title}</div>
                 <FaTrashAlt className="favourite-remove" onClick={() => modalOpenHandler(item)} />
               </li>
             ))}

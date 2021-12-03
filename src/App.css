@@ -76,6 +76,10 @@ button:hover {
 	right: 30px;
 }
 
+.active-lang {
+	background: rgb(176, 151, 235);
+}
+
 @media(max-width: 900px) {
 	.wrapper {
 		margin-top: 100px;
