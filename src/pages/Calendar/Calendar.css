@@ -1,0 +1,9 @@
+.container-calendar {
+  margin-top: 100px;
+}
+
+.today-city {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}

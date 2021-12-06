@@ -1,9 +1,9 @@
 import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addCity, addToCash, clearLink } from "../../store/actions";
+import { addCity, addToCash, clearLink, addFromCalendar } from "../../store/actions";
 
 import Weather from "../../components/Weather/Weather";
 import WeatherInfo from "../../components/WeatherInfo/WeatherInfo";
@@ -25,21 +25,24 @@ const Home = () => {
   const [activeWeek, setActiveWeek] = useState(null);
   const [defaultTemp, setDefaultTemp] = useState("C");
   const [loading, setLoading] = useState(false);
+  const [isAdd, setIsAdd] = useState(null);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const favouritesList = useSelector(state => state.favourites.favourites);
   const actLinkCity = useSelector(state => state.favourites.activeLink);
   const cashCities = useSelector(state => state.favourites.cashCities);
 
   const getWeather = async () => {
     setLoading(true);
+    setIsAdd(null);
     if (city !== "" && /[A-Za-z]/.test(city)) {
       const findCity = cashCities.find(item => item.city.toLowerCase() === city.toLowerCase());
       if (!findCity) {
         const getWoeid = await axios.get(`/search/?query=${city}`);
         if (getWoeid.data.length === 0) {
           toast.error("This city not found", {
-            position: "top-right",
+            position: "top-left",
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -70,8 +73,9 @@ const Home = () => {
     setCity("");
   }
 
-  const onChangeDate = (e) => {
-    console.log(e.target.value)
+  const onChangeDate = (date) => {
+    dispatch(addFromCalendar(date.split("-").join("/"), dataOfCity.woeid, dataOfCity.title));
+    navigate("/calendar");
   }
 
   const getDatas = (dataCity, actDay, week) => {
@@ -121,13 +125,21 @@ const Home = () => {
     }
   }, [cashCities, actLinkCity, defaultActive, dispatch])
 
+  const checkIsAddedDay = useCallback(() => {
+    if (dataOfCity) {
+      const elem = favouritesList.find(item => item.id === dataOfCity.woeid)
+      setIsAdd(elem)
+    }
+  }, [favouritesList, dataOfCity])
+
   const addToFavourite = () => {
     const elem = favouritesList.find(item => item.id === dataOfCity.woeid)
+
     if (!elem) {
-      dispatch(addCity(dataOfCity.woeid, dataOfCity.title));
+      dispatch(addCity(dataOfCity.woeid, dataOfCity.title, true));
       toast.success("The forecast added to list", {
-        position: "top-right",
-        autoClose: 5000,
+        position: "top-left",
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -136,8 +148,8 @@ const Home = () => {
       })
     } else {
       toast.error("The weather forecast is already on the list", {
-        position: "top-right",
-        autoClose: 5000,
+        position: "top-left",
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -149,7 +161,8 @@ const Home = () => {
 
   useEffect(() => {
     reloadCity();
-  }, [reloadCity])
+    checkIsAddedDay()
+  }, [reloadCity, checkIsAddedDay])
 
   return (
     <div className="container">
@@ -163,6 +176,8 @@ const Home = () => {
         convertToFahrenheit={convertToFahrenheit}
         defaultTemp={defaultTemp}
         addToFavourite={addToFavourite}
+        checkIsAddedDay={checkIsAddedDay}
+        isAdd={isAdd}
       />}
       {!loading && <WeatherInfo
         inputHandler={inputHandler}

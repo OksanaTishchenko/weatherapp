@@ -7,19 +7,18 @@ import Home from "./pages/Home/Home";
 import Favourites from "./pages/Favourites/Favourites";
 
 import "./App.css";
+import Calendar from "./pages/Calendar/Calendar";
 
 function App() {
 
   const { i18n } = useTranslation();
 
-  const [defaultLanguage, setDefaultLanguage] = useState("")
+  const [defaultLanguage, setDefaultLanguage] = useState("en");
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
     setDefaultLanguage(lang)
-    // console.log('Lang ', lang)
   };
-
 
   return (
     <div className="wrapper">
@@ -30,6 +29,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/favourites" element={<Favourites />} />
+        <Route path="/calendar" element={<Calendar />} />
       </Routes>
     </div>
   );

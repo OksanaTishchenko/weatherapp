@@ -11,7 +11,7 @@ const WeatherInfo = ({ inputHandler,
   getDayOfTheWeek,
   changeActive,
   city,
-  loading
+  onChangeDate
 }) => {
   const { t } = useTranslation()
   return (
@@ -66,7 +66,7 @@ const WeatherInfo = ({ inputHandler,
           <FaSearchLocation className="location-search" onClick={getWeather} />
         </form>
       </div>
-      {/* {dataOfCity && <input type="date" onChange={onChangeDate} />} */}
+      {dataOfCity && <input type="date" onChange={(e) => onChangeDate(e.target.value)} />}
     </div>
   );
 }

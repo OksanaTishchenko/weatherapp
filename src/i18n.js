@@ -6,7 +6,6 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    // we init with resources
     resources: {
       en: {
         translations: {
@@ -42,7 +41,11 @@ i18n
           "Are you sure you want to delete the weather forecast": "Are you sure you want to delete the weather forecast",
           "Yes": "Yes",
           "No": "No",
-          "You do not have favourite weather forecasts": "You do not have favourite weather forecasts"
+          "You do not have favourite weather forecasts": "You do not have favourite weather forecasts",
+          "Forecast for": "Forecast for",
+          "This forecast is not yet available": "This forecast is not yet available",
+          "Added": "Added",
+          "Date": "Date"
         }
       },
       uk: {
@@ -79,10 +82,15 @@ i18n
           "Are you sure you want to delete the weather forecast": "Чи ви впевнені що бажаєте видалити прогноз погоди",
           "Yes": "Так",
           "No": "Ні",
-          "You do not have favourite weather forecasts": "У вас немає вибраних прогнозів погоди"
+          "You do not have favourite weather forecasts": "У вас немає вибраних прогнозів погоди",
+          "Forecast for": "Прогноз для",
+          "This forecast is not yet available": "Цього прогнозу погоди ще немає",
+          "Added": "Додано",
+          "Date": "Дата"
         }
       }
     },
+    lng: "en",
     fallbackLng: "en",
     debug: false,
     ns: ["translations"],

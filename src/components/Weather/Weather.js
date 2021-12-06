@@ -1,11 +1,12 @@
 import { Trans } from "react-i18next";
 
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import "./Weather.css";
 
-const Weather = ({ activeDay, city, weekDay, convertToFahrenheit, defaultTemp, addToFavourite }) => {
+const Weather = ({ activeDay, city, weekDay, convertToFahrenheit, defaultTemp, addToFavourite, isAdd }) => {
 
   return (
+
     activeDay &&
 
     <div className="weather-side">
@@ -15,10 +16,10 @@ const Weather = ({ activeDay, city, weekDay, convertToFahrenheit, defaultTemp, a
         <span className="date-day">{activeDay.applicable_date.split('-').reverse().join('.')}</span>
         <span className="location">{city}</span>
         <div className="location-favourite" onClick={addToFavourite}>
-
-          {/* {checkCity && <span><Trans>Added</Trans></span>} */}
-          <span><Trans>Add to</Trans></span>
-          <FaRegHeart className="favourite-icon" />
+          {isAdd && isAdd.added && <span ><Trans>Added</Trans></span>}
+          {!isAdd && <span><Trans>Add to</Trans></span>}
+          {isAdd && isAdd.added && <FaHeart className="favourite-icon" />}
+          {!isAdd && <FaRegHeart className="favourite-icon" />}
         </div>
 
       </div>

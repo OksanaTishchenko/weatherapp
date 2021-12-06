@@ -14,7 +14,6 @@
 .box {
   width: 400px;
   height: 300px;
-  /* background: #fff; */
   background: linear-gradient( 135deg, #72EDF2 10%, #9595f1 100%);
   position: relative;
   padding: 15px;
