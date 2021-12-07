@@ -11,20 +11,20 @@
   margin-bottom: 10px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-border: none;
-border-radius: 10px;
-font-size: 16px;
-font-family: 'Montserrat', sans-serif;
-background-image: var(--gradient);
-color: black;
-font-weight: 700;
--webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background-image: var(--gradient);
+  color: black;
+  font-weight: 700;
+  -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
--webkit-transition: -webkit-transform 200ms ease;
-transition: -webkit-transform 200ms ease;
--o-transition: transform 200ms ease;
-transition: transform 200ms ease;
-transition: transform 200ms ease, -webkit-transform 200ms ease;
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  -o-transition: transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
 }
 
 .favourite-remove {

@@ -29,7 +29,7 @@
 	grid-template-columns: repeat(6, 1fr);
 	list-style: none;
 	-webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
-	        box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
 }
 
@@ -44,12 +44,12 @@
 
 .week-list>li:hover {
 	-webkit-transform: scale(1.1);
-	    -ms-transform: scale(1.1);
-	        transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
 	background: #fff;
 	color: #222831;
 	-webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
-	        box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+	box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
 }
 
 .week-list>li.active {
@@ -90,7 +90,7 @@
 	outline: none;
 	width: 100%;
 	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	border: none;
 	border-radius: 25px;
 	padding: 10px;
@@ -100,7 +100,7 @@
 	color: black;
 	font-weight: 700;
 	-webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
-	        box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
 	-webkit-transition: -webkit-transform 200ms ease;
 	transition: -webkit-transform 200ms ease;
@@ -117,6 +117,7 @@
 	margin-left: 10px;
 	font-size: 26px;
 	cursor: pointer;
+	color: #ffff;
 }
 
 .day-img {
@@ -126,6 +127,14 @@
 
 .day-img img {
 	width: 100%;
+}
+
+.form-btn {
+	background: none;
+}
+
+.form-btn:hover {
+	background: none;
 }
 
 @media(max-width: 620px) {
