@@ -39,7 +39,7 @@ const Home = () => {
     if (city !== "" && /[A-Za-z]/.test(city)) {
       const findCity = cashCities.find(item => item.title.toLowerCase() === city.toLowerCase());
       if (!findCity) {
-        const getWoeid = await axios.get(`/search/?query=${city}`);
+        const getWoeid = await axios.get(`https://www.metaweather.com/api/location/search/?query=${city}`);
         if (getWoeid.data.length === 0) {
           toast.error("This city not found", {
             position: "top-left",
