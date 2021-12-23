@@ -53,6 +53,7 @@ const Home = () => {
         } else {
           const getCity = await axios.get(`/${getWoeid.data[0].woeid}/`);
           dispatch(addToCash(getCity.data));
+          console.log('City ', getCity)
           getDatas(
             getCity.data,
             getCity.data.consolidated_weather[defaultActive],

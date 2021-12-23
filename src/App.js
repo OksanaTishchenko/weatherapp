@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 
 import Home from "./pages/Home/Home";
 import Favourites from "./pages/Favourites/Favourites";
+import Calendar from "./pages/Calendar/Calendar";
 
 import "./App.css";
-import Calendar from "./pages/Calendar/Calendar";
 
 function App() {
 
